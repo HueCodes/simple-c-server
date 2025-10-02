@@ -1,1 +1,2 @@
-Simple server in C, more updates coming soon. Using this to better my skills in C
+Simple server in C. Using this to practice my skills in C will be adding more features soon.
+

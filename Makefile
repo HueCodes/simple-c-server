@@ -1,7 +1,15 @@
-all: server
+CC = gcc
+CFLAGS = -std=c99 -Wall -Wextra -Wpedantic -D_POSIX_C_SOURCE=200809L
+LDFLAGS = -pthread
+TARGET = server
+SRC = server.c
 
-server: server.c
-	gcc -o server server.c -Wall -Wextra -pedantic
+.PHONY: all clean
+
+all: $(TARGET)
+
+$(TARGET): $(SRC)
+	$(CC) $(CFLAGS) -o $(TARGET) $(SRC) $(LDFLAGS)
 
 clean:
-	rm -f server
+	rm -f $(TARGET)
